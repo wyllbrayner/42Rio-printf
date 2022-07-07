@@ -12,7 +12,9 @@
 
 #include "printf.h"
 
-void	ft_putnbr_ex_fd(unsigned int n, char *base, int fd)
+static int	ft_unllen(unsigned long n);
+
+int	ft_putnbr_ex_fd(unsigned long n, char *base, int fd)
 {   	
 	if (fd > 0)
 	{
@@ -20,4 +22,20 @@ void	ft_putnbr_ex_fd(unsigned int n, char *base, int fd)
 			ft_putnbr_ex_fd((n / 16), base, fd);
 		ft_putchar_fd(base[(n % 16)], fd);
 	}
+	return (ft_unllen(n));
+}
+
+static int	ft_unllen(unsigned long n)
+{
+	int	size;
+
+	size = 0;
+	if (n == 0)
+		return (size++);
+	while (n != 0)
+	{
+		n /= 10;
+		size++;
+	}
+	return (size);
 }

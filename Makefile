@@ -1,4 +1,4 @@
-SRCS	= ft_printf.c ft_putnbr_un_fd.c ft_putnbr_ex_fd.c ft_putnbr_pt_fd.c
+SRCS	= ft_printf.c ft_putnbr_un_fd.c ft_putnbr_ex_fd.c ft_putnbr_pt_fd.c ft_management_str.c
 OBJS	= $(SRCS:.c=.o)
 PROJ	= printf
 NAME	= libprintf.a
@@ -32,4 +32,10 @@ re: fclean all
 list:
 	ls -la
 
-.PRONH: all $(NAME) clean fclean re list
+$(PROJ).out:	$(NAME) $(PROJ).h
+	$(COMP) $(FLAG) main.c $(NAME) $(PROJ).h
+
+run:
+	./a.out
+
+.PRONH: all $(NAME) clean fclean re list $(PROJ).out run

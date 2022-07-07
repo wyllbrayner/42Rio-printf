@@ -12,7 +12,7 @@
 
 #include "printf.h"
 
-void	ft_putnbr_un_fd(unsigned int n, int fd)
+void	ft_putnbr_un_fd(unsigned long n, int fd)
 {
 	if (fd > 0)
 	{

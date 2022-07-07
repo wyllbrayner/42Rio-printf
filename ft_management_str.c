@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_pt_fd                                    :+:      :+:    :+:   */
+/*   ft_management_str                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,13 +12,20 @@
 
 #include "printf.h"
 
-void	ft_putnbr_pt_fd(void *ptr, int fd)
+int	ft_management_str(char *str, int fd)
 {
-	unsigned long n_long;
 	if (fd > 0)
 	{
-		n_long = (unsigned long)ptr;
-		ft_putstr_fd("0x", 1);
-		ft_putnbr_ex_fd(n_long, "0123456789abcdef", fd);
+		if (!str)
+		{
+			ft_putstr_fd("(null)", fd);
+			return (6);
+		}
+		else
+		{
+			ft_putstr_fd(str, fd);
+			return ((int)ft_strlen(str));
+		}
 	}
+	return (0);
 }

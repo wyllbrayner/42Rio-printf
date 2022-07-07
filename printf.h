@@ -59,8 +59,9 @@ void	ft_putnbr_fd(int n, int fd);
 
 
 int		ft_printf(const char *frase, ...);
-void	ft_putnbr_un_fd(unsigned int n, int fd);
-void	ft_putnbr_ex_fd(unsigned int n, char *base, int fd);
+void	ft_putnbr_un_fd(unsigned long n, int fd);
+int		ft_putnbr_ex_fd(unsigned long n, char *base, int fd);
 void	ft_putnbr_pt_fd(void *ptr, int fd);
+int		ft_management_str(char *str, int fd);
 
 #endif
