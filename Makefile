@@ -1,4 +1,4 @@
-SRCS	= ft_printf.c ft_putnbr_un_fd.c ft_putnbr_ex_fd.c ft_putnbr_pt_fd.c ft_management_str.c
+SRCS	= ft_printf.c ft_putnbr_un_fd.c ft_management_str.c
 OBJS	= $(SRCS:.c=.o)
 PROJ	= printf
 NAME	= libprintf.a

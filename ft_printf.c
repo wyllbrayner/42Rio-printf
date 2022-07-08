@@ -54,6 +54,12 @@ static int	ft_check_type(const char *type, va_list vlr)
 	}
 	else if (*type == 's')
 		return (ft_management_str(va_arg(vlr, char *), 1));
+	else if (*type == '%')
+	{
+		ft_putchar_fd('%', 1);
+		return (1);
+	}
+
 	else if (*type == 'p')
 	{
 		ft_putnbr_pt_fd(va_arg(vlr, void *), 1);
@@ -70,10 +76,5 @@ static int	ft_check_type(const char *type, va_list vlr)
 		return (ft_putnbr_ex_fd(va_arg(vlr, unsigned long), "0123456789abcdef", 1));
 	else if	(*type == 'X')
 		return (ft_putnbr_ex_fd(va_arg(vlr, unsigned long), "0123456789ABCDEF", 1));
-	else if (*type == '%')
-	{
-		ft_putchar_fd('%', 1);
-		return (1);
-	}
 	return (0);
 }
