@@ -9,8 +9,6 @@ RM		= rm -f
 UTIL	= ar
 OPT		= rc
 SUMM	= ranlib
-FLAG	= -Wall -Wextra -Werror
-COMP	= cc
 LOCLIB	= .
 
 all:	$(NAME)
