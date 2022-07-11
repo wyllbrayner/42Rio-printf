@@ -12,7 +12,7 @@
 
 #include "libftprintf.h"
 
-int	ft_printf_arg(const char *frase, va_list ap);
+static int	ft_printf_arg(const char *frase, va_list ap);
 
 int	ft_printf(const char *frase, ...)
 {
@@ -26,7 +26,7 @@ int	ft_printf(const char *frase, ...)
 	while (frase[i])
 	{	
 		if (frase[i] == '%' && (!ft_strchr("cspdiuxX%", frase[i + 1]) || \
-		 !frase[i + 1]))
+		!frase[i + 1]))
 			i++;
 		else if (frase[i] == '%' && ft_strchr("cspdiuxX%", frase[i + 1]))
 		{
@@ -43,7 +43,7 @@ int	ft_printf(const char *frase, ...)
 	return (ret);
 }
 
-int	ft_printf_arg(const char *frase, va_list ap)
+static int	ft_printf_arg(const char *frase, va_list ap)
 {
 	if (*frase == '%')
 		return (ft_putchar(*frase));
@@ -55,16 +55,13 @@ int	ft_printf_arg(const char *frase, va_list ap)
 		return (ft_putnbr(va_arg(ap, int)));
 	else if (*frase == 'u')
 		return (ft_putnbr_u(va_arg(ap, unsigned int)));
-	else if (*frase == 'x' || *frase == 'X')
-	{
-		if (*frase == 'X')
-			return (ft_puthex(va_arg(ap, unsigned int), "0123456789ABCDEF", 16));
-		else
-			return (ft_puthex(va_arg(ap, unsigned int), "0123456789abcdef", 16));
-	}
+	else if (*frase == 'X')
+		return (ft_puthex(va_arg(ap, unsigned int), "0123456789ABCDEF", 16));
+	else if (*frase == 'x')
+		return (ft_puthex(va_arg(ap, unsigned int), "0123456789abcdef", 16));
 	else if (*frase == 'p')
 		return (ft_putstr("0x") + ft_putpointer(va_arg(ap, void *), \
-				"0123456789abcdef", 16));
+		"0123456789abcdef", 16));
 	else
 		return (0);
 }

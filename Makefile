@@ -34,7 +34,7 @@ re: fclean all
 list:
 	ls -la
 
-libft$(PROJ).out:	$(NAME) libft$(PROJ).h
+libft$(PROJ).out:	$(NAME) libft$(PROJ).h main.c
 	$(COMP) $(FLAG) -o libft$(PROJ).out main.c -L$(LOCLIBPTF) -lft$(PROJ)
 
 run: libft$(PROJ).out

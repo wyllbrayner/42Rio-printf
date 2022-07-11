@@ -18,6 +18,7 @@ int	main(void)
 	int len;
 	char p;
 /*
+
 */
 	printf("\n============ Rescrevendo o printf ============\n");
 	len = ft_printf("Passando: string %s | string nula: %s | caract: %c | ponteiro: %p | int: %i | digit: %d | unsigned: %u | HEX: %X | hex: %x | porcento porcento %% | porcento sozinho: % apos os parametros.\n", "Envio de string", NULL, 'W', &p, 42, 21, 4294967295, 429496, 429496);
@@ -114,8 +115,5 @@ int	main(void)
 	printf("\nVerificando o retorno da função original\n");
 	len =    printf("Passando: porcento sozinho: ");
 	printf("\nValor retornado pela    printf: %i\n", len);
-
-
-
 	return (0);
 }
