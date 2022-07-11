@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_utoa.c                                          :+:      :+:    :+:   */
+/*   libftprintf.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: woliveir                                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,55 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#ifndef PRINTF_H
+# define PRINTF_H
 
-char		*ft_utoa(unsigned int n);
-static int	num_len(unsigned int n);
+# include "./libftprintf.h"
 
-int	ft_putnbr_u(unsigned int nbr)
-{
-	char	*str;
-
-	str = ft_utoa(nbr);
-	ft_putstr_fd(str, 1);
-	free(str);
-	return (num_len(nbr));
-}
-
-char	*ft_utoa(unsigned int n)
-{
-	int				i;
-	unsigned int	aux;
-	char			*ptr;
-
-	i = num_len(n);
-	aux = n;
-	ptr = (char *)malloc(sizeof(char) * (i + 1));
-	if (!ptr)
-		return (NULL);
-	ptr[i] = '\0';
-	if (aux == 0)
-		ptr[0] = '0';
-	ptr[i--] = '\0';
-	while (aux)
-	{
-		ptr[i--] = (aux % 10) + '0';
-		aux /= 10;
-	}
-	return (ptr);
-}
-
-static int	num_len(unsigned int n)
-{
-	int	len;
-
-	len = 0;
-	if (n <= 0)
-		len++;
-	while (n)
-	{
-		len++;
-		n /= 10;
-	}
-	return (len);
-}
+#endif

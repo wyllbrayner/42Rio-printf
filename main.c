@@ -25,7 +25,7 @@ int	main(void)
 	printf("Valor retornado pela ft_printf: %i\n", len);
 
 	printf("\nVerificando o retorno da função original\n");
-	len = ft_printf("Passando: string %s | string nula: %p | caract: %c | ponteiro: %p | int: %i | digit: %d | unsigned: %u | HEX: %X | hex: %x | porcento porcento %% | porcento sozinho:  apos os parametros.\n", "Envio de string", NULL, 'W', &p, 42, 21, 4294967295, 429496, 429496);
+	len = ft_printf("Passando: string %s | string nula: %s | caract: %c | ponteiro: %p | int: %i | digit: %d | unsigned: %u | HEX: %X | hex: %x | porcento porcento %% | porcento sozinho:  apos os parametros.\n", "Envio de string", NULL, 'W', &p, 42, 21, 4294967295, 429496, 429496);
 	printf("Valor retornado pela    printf: %i\n", len);
 
 	printf("\n============ Rescrevendo o printf ============\n");
@@ -41,7 +41,7 @@ int	main(void)
 	printf("\nValor retornado pela ft_printf: %i\n", len);
 
 	printf("\nVerificando o retorno da função original\n");
-	len =    printf("Passando: string nula %p", NULL);
+	len =    printf("Passando: string nula %s", NULL);
 	printf("\nValor retornado pela    printf: %i\n", len);
 
 	printf("\n============ Rescrevendo o printf ============\n");

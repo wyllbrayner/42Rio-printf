@@ -17,13 +17,13 @@
 # include <unistd.h>
 # include "./libft/libft.h"
 
-int     ft_putchar(char c);
-int     ft_putnbr(int nbr);
-int     ft_putstr(char *str);
-int     ft_putnbr_u(unsigned int nbr);
-char    *ft_utoa(unsigned int n);
-int     ft_putpointer(void *nbr, char *base, size_t t_base);
-int     ft_puthex(unsigned int nbr, char *base, size_t t_base);
-int     ft_printf(const char *fornat, ...);
+int		ft_putchar(char c);
+int		ft_putnbr(int nbr);
+int		ft_putstr(char *str);
+int		ft_putnbr_u(unsigned int nbr);
+char	*ft_utoa(unsigned int n);
+int		ft_putpointer(void *nbr, char *base, size_t t_base);
+int		ft_puthex(unsigned int nbr, char *base, size_t t_base);
+int		ft_printf(const char *fornat, ...);
 
 #endif
